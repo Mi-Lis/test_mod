@@ -2,6 +2,7 @@ package com.milis.testmod;
 
 import com.ibm.icu.impl.CacheValue;
 import com.milis.testmod.items.Items;
+import com.milis.testmod.blocks.Blocks;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
@@ -9,7 +10,6 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.material.Fluid;
@@ -42,11 +42,9 @@ public class TestMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         Items.register(modEventBus);
-
+        Blocks.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-
-
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -54,8 +52,6 @@ public class TestMod
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         // Some common setup code
-        LOGGER.info("HELLO FROM COMMON SETUP");
-        LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

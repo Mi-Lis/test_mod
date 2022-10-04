@@ -1,3 +1,8 @@
 {
-  "item.testmod.zircon": "Zircon"
+  "item.testmod.zircon": "Zircon",
+  "item.testmod.earth_el": "Earth essence",
+  "item.testmod.fire_el": "Fire essence",
+  "item.testmod.water_el": "Water essence",
+  "item.testmod.wind_el": "Wind essence",
+  "block.testmod.zircon_block": "Zircon Block"
 }
